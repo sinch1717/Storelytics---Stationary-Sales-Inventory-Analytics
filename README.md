@@ -121,5 +121,4 @@ Data revealed that 24.2% of SKUs fall below the 20% margin threshold, with Writi
 └── README.md
 ```
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
-```
 **BDM Capstone Project — IIT Madras | Author: Sinchana V**
