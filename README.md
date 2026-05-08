@@ -32,76 +32,23 @@ All decisions depended on owner memory and intuition, without historical records
 
 ---
 
-## Product Categories
-
-| Code | Category |
-|------|----------|
-| WI | Writing Instruments |
-| PP | Paper Products |
-| FF | Files and Folders |
-| OD | Office Desk Supplies |
-| AT | Adhesives & Tapes |
-| CE | Correction & Erasing Items |
-| MG | Measurement & Geometry Tools |
-| AC | Art & Craft Supplies |
-| SS | School-Specific Supplies |
-| OF | Office Forms & Registers |
-| PC | Printing & Computer Stationery |
-| FB | Fasteners & Binding Materials |
-| EM | Envelopes & Mailing Supplies |
-| MU | Miscellaneous / Utility Items |
-| TG | Toys & Games |
-| EL | Electronics & Accessories |
-| SV | Services |
-
----
 
 ## Data Handling
 
-Raw ledger entries were digitised and processed through a four-stage Python pipeline:
-
-| Script | Purpose |
-|--------|---------|
-| `script1_duplicate_handling.py` | Deduplication & category mapping |
-| `script2_uom.py` | Unit of measurement assignment |
-| `script3_sku.py` | SKU code generation |
-| `om_stationeries.py` | Sales processing pipeline |
-
-**SKU Format:** `[CATEGORY CODE]-[SUBCATEGORY CODE]-[SEQUENCE]` — e.g. `WI-PEN-011`
-
-Ambiguous product names were resolved via alias matching and manual verification. Stock quantities are owner-stated estimates and are acknowledged as a limitation throughout.
+- Raw ledger entries were digitised and processed through a four-stage Python pipeline
+- Ambiguous product names were resolved via alias matching and manual verification. Stock quantities are owner-stated estimates and are acknowledged as a limitation throughout.
 
 ---
 
 ## Methods of Analysis
 
-- **Margin analysis** — Gross margin distribution across SKUs and categories; compared against the owner's assumed 15–20% floor
-- **Strategic quadrant analysis** — Categories plotted on margin % vs. revenue to identify Stars, Volume Risk, and Untapped segments
-- **ABC classification** — SKUs ranked by revenue contribution into Tier A / B / C for inventory prioritisation
-- **Velocity analysis** — Stock value vs. 29-day sales revenue per category to detect capital lock-in
-- **Time-of-day analysis** — Transaction heatmap with coefficient of variation (CV) per slot to assess demand predictability
+- **Margin analysis**
+- **Strategic quadrant analysis**
+- **ABC classification**
+- **Velocity analysis**
+- **Time-of-day analysis**
 
 ---
-
-## Key Insights
-
-**Margin Analysis**
-- 24.2% of priced SKUs fall below the assumed 20% margin threshold
-- Writing Instruments generated high revenue but operated at relatively lower margins
-- Art & Craft Supplies emerged as the only high-revenue, high-margin "Star" category
-
-**Inventory Analysis**
-- 43 SKUs generated nearly 70% of total revenue
-- Writing Instruments held ₹3.8L inventory at only 7% stock velocity
-- Files & Folders showed extremely low movement relative to invested capital
-
-**Operational Insights**
-- Morning and Night sales slots were the most volatile
-- Evening transactions were the most predictable operational window
-- Several best-selling products operated below the margin floor
-
----
-
 ## Outcomes
 
 Data revealed that 24.2% of SKUs fall below the 20% margin threshold, with Writing Instruments and Toys & Games most at risk. Just 43 SKUs drive 70% of total revenue, while several categories — notably Files & Folders and School Supplies — hold hundreds of days of excess stock. The project delivers tiered restocking guidelines, targeted pricing recommendations, and a lightweight daily logging habit that gives the owner an ongoing data foundation without disrupting store operations. Study under BDM Capstone Project, IIT Madras
@@ -110,13 +57,7 @@ Data revealed that 24.2% of SKUs fall below the 20% margin threshold, with Writi
 
 ## Repository Structure
 ```
-├── notebooks/
-│   ├── graphs.ipynb
-├── scripts/
-│   ├── script1_duplicate_handling.py
-│   ├── script2_uom.py
-│   ├── script3_sku.py
-│   └── om_stationeries.py
+├── LICENSE
 ├── Insights.pdf
 └── README.md
 ```
